@@ -140,6 +140,3 @@ The project brief identifies these next steps for a more complete modeling study
 
 Until that evaluation is completed, use predictions as a planning aid rather than a guarantee of actual rental demand.
 
-## Contributors
-
-- [rahulchandra346](https://github.com/rahulchandra346) — Project owner
