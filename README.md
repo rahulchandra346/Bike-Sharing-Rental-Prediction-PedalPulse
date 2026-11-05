@@ -31,4 +31,8 @@ Open the dashboard at <http://localhost:8501>. The prediction tab connects to th
 
 ## Model
 
-The checked-in `bike_rental_model.pkl` may be a Git LFS pointer rather than the model binary. When no usable model artifact is present, the API trains an Extra Trees fallback from `Dataset.csv` at startup. To use a trained model artifact, place `bike_rental_model.joblib` beside `main.py`.
+When no usable model artifact is present, the API trains an Extra Trees fallback from `Dataset.csv` at startup. To use a trained model artifact, place `bike_rental_model.joblib` inside `api/`.
+
+## Deployment
+
+The Streamlit dashboard can be deployed from the repository root with `app.py` as the entry point. The FastAPI service is isolated in `api/` with its own minimal dependencies and dataset so it can be deployed separately on Vercel with `api/` as the project root. Set the dashboard's `API_URL` environment variable to the Vercel deployment URL.
