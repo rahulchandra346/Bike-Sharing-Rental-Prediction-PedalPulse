@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+plotly
+requests
+joblib
+scikit-learn==1.6.1
+fastapi
+uvicorn[standard]
+pydantic
