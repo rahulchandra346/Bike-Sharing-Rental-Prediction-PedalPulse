@@ -8,14 +8,6 @@ Bike-sharing operators need to keep enough bicycles available where and when rid
 
 The project brief sets out a broader machine-learning workflow: explore and clean the data, engineer useful features, compare regression models, tune and evaluate them, and deploy a selected model. The current repository provides the interactive analytics dashboard and a working prediction API. The API currently uses a dataset-based nearest-neighbor baseline; the model-comparison and hyperparameter-tuning work in the brief remains future work (see [Model status and next steps](#model-status-and-next-steps)).
 
-## Live application
-
-- **Dashboard:** [Open PedalPulse](https://bike-sharing-rental-prediction-pedalpulse-fhfnrsj75xtdbdcvdzik.streamlit.app/)
-- **API base URL:** [Open the Vercel project URL](https://bike-sharing-rental-peda-psi.vercel.app/) — redirects to the dashboard
-- **API health:** [`/health`](https://bike-sharing-rental-peda-psi.vercel.app/health)
-- **Interactive API documentation:** [`/docs`](https://bike-sharing-rental-peda-psi.vercel.app/docs)
-
-The API also exposes `POST /predict`.
 
 ## What the dashboard does
 
