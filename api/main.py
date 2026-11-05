@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, Field
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -136,10 +137,9 @@ app = FastAPI(
 
 @app.get("/")
 def home():
-    return {
-        "message": "Bike Rental Prediction API is running",
-        "model": model_name
-    }
+    return RedirectResponse(
+        "https://bike-sharing-rental-prediction-pedalpulse-fhfnrsj75xtdbdcvdzik.streamlit.app/"
+    )
 
 
 @app.get("/health")
