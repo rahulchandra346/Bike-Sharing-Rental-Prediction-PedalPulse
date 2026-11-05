@@ -35,4 +35,4 @@ The original model binary is not included in the repository. The API trains a li
 
 ## Deployment
 
-The Streamlit dashboard can be deployed from the repository root with `app.py` as the entry point. The FastAPI service is isolated in `api/` with its own minimal dependencies and dataset so it can be deployed separately on Vercel with `api/` as the project root. Set the dashboard's `API_URL` environment variable to the Vercel deployment URL.
+The Streamlit dashboard can be deployed from the repository root with `app.py` as the entry point. The FastAPI service is isolated in `api/` with its own minimal dependencies and dataset so it can be deployed separately on Vercel with `api/` as the project root. For Streamlit Community Cloud, add `API_URL = "https://bike-sharing-rental-prediction-peda-psi.vercel.app"` under the app's Settings > Secrets. Locally, set the `API_URL` environment variable if you need to use a different backend; otherwise the dashboard connects to `http://127.0.0.1:8000`.

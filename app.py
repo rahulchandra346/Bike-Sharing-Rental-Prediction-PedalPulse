@@ -8,6 +8,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import requests
 import streamlit as st
+from streamlit.errors import StreamlitSecretNotFoundError
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -303,9 +304,14 @@ with tab_segments:
 with tab_predict:
     st.markdown('<div class="section-title">Machine learning prediction</div>', unsafe_allow_html=True)
     st.caption("Send a scenario to your FastAPI model. Weather measurements use the dataset's normalized 0–1 scale.")
+    try:
+        cloud_api_url = st.secrets.get("API_URL")
+    except StreamlitSecretNotFoundError:
+        cloud_api_url = None
+    default_api_url = os.getenv("API_URL") or cloud_api_url or "http://127.0.0.1:8000"
     api_url = st.text_input(
         "FastAPI base URL",
-        value=os.getenv("API_URL", "http://127.0.0.1:8000"),
+        value=default_api_url,
         help="For local testing use http://127.0.0.1:8000. For deployment, enter your backend URL."
     ).rstrip("/")
 
