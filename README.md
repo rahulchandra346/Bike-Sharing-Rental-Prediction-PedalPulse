@@ -31,7 +31,7 @@ Open the dashboard at <http://localhost:8501>. The prediction tab connects to th
 
 ## Model
 
-When no usable model artifact is present, the API trains an Extra Trees fallback from `Dataset.csv` at startup. To use a trained model artifact, place `bike_rental_model.joblib` inside `api/`.
+The original model binary is not included in the repository. The API trains a lightweight nearest-neighbor demand model from `Dataset.csv` at startup.
 
 ## Deployment
 
